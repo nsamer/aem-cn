@@ -1,0 +1,12 @@
+image: atlassian/default-image:2
+
+pipelines:
+    branches:
+      main:
+        - step:
+           script:
+             - git remote add sync git@github.com:nsamer/aem-cn.git
+             - git checkout main
+             - git pull    
+             - git push sync main
+  
